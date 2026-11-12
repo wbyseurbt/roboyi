@@ -1,0 +1,38 @@
+{
+  "robot_name": "roboyi",
+  "self_collisions_enabled": true,
+  "disabled_pairs": [
+    {
+      "link1": "base_link",
+      "link2": "Left_hip_pitch_link",
+      "reason": "Overlapping convex hulls in hip assembly; shared with MJCF and USD"
+    },
+    {
+      "link1": "base_link",
+      "link2": "Left_hip_roll_link",
+      "reason": "Overlapping convex hulls in hip assembly; shared with MJCF and USD"
+    },
+    {
+      "link1": "base_link",
+      "link2": "Left_thigh_link",
+      "reason": "Overlapping convex hulls in hip assembly; shared with MJCF and USD"
+    },
+    {
+      "link1": "base_link",
+      "link2": "Right_hip_pitch_link",
+      "reason": "Overlapping convex hulls in hip assembly; shared with MJCF and USD"
+    },
+    {
+      "link1": "base_link",
+      "link2": "Right_hip_roll_link",
+      "reason": "Overlapping convex hulls in hip assembly; shared with MJCF and USD"
+    },
+    {
+      "link1": "base_link",
+      "link2": "Right_thigh_link",
+      "reason": "Overlapping convex hulls in hip assembly; shared with MJCF and USD"
+    }
+  ],
+  "standard_urdf_limitation": "Standard URDF does not encode disabled collision pairs. The pre-authored USD includes them; URDF importers must consume this manifest or SRDF explicitly.",
+  "usd_link_path_template": "/roboyi/Geometry/{link_name}"
+}

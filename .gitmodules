@@ -1,0 +1,6 @@
+[submodule "robolab"]
+	path = robolab
+	url = https://github.com/Roboparty/robolab.git
+[submodule "rsl_rl"]
+	path = rsl_rl
+	url = https://github.com/Roboparty/rsl_rl.git

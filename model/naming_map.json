@@ -1,0 +1,29 @@
+{
+  "robot_name": "roboyi",
+  "backup": "D:\\Project\\model_backups\\20261107_before_roboyi_rename",
+  "joint_renames": {
+    "left_pitch": "Left_pitch",
+    "Left_sole": "Left_ankle",
+    "Right_sole": "Right_ankle"
+  },
+  "link_renames": {
+    "base_link": "base_link",
+    "Left_Link": "Left_hip_pitch_link",
+    "Left_roll": "Left_hip_roll_link",
+    "Left_yaw": "Left_thigh_link",
+    "Left_knee": "Left_shank_link",
+    "Left_sole": "Left_foot_link",
+    "Right_Link": "Right_hip_pitch_link",
+    "Right_roll": "Right_hip_roll_link",
+    "Right_yaw": "Right_thigh_link",
+    "Right_knee": "Right_shank_link",
+    "Right_sole": "Right_foot_link"
+  },
+  "entries": {
+    "urdf": "D:\\Project\\model\\mujoco\\meshes\\roboyi.urdf",
+    "mujoco": "D:\\Project\\model\\mujoco\\roboyi.xml",
+    "usd": "D:\\Project\\model\\isaacsim\\roboyi.usda",
+    "standing_scene": "D:\\Project\\model\\mujoco\\standing_scene.xml"
+  },
+  "naming_only": true
+}

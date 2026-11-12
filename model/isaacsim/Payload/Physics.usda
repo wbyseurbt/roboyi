@@ -1,0 +1,542 @@
+#usda 1.0
+(
+    "Converted from meshes/roboyi.urdf"
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "roboyi"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "roboyi"
+{
+    def Scope "Physics"
+    {
+        def PhysicsRevoluteJoint "Left_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI", "PhysxJointAxisAPI:angular", "NewtonJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0.034906585
+            float drive:angular:physics:maxForce = 20
+            float drive:angular:physics:stiffness = 1.7453293
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "force"
+            float newton:armature = 0.01
+            float newton:damping = 0.00017453292
+            float newton:friction = 0
+            float newton:velocityLimit = 171.88734
+            uniform token physics:axis = "X"
+            rel physics:body0 = </roboyi/Geometry/base_link>
+            rel physics:body1 = </roboyi/Geometry/Left_hip_pitch_link>
+            point3f physics:localPos0 = (0, 0.09555, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-9.4734265e-9, 0.70710677, 0.70710677, 9.4734265e-9)
+            quatf physics:localRot1 = (1.2101617e-8, 0.70710677, 0.70710677, -1.2101617e-8)
+            float physics:lowerLimit = -45
+            float physics:upperLimit = 45
+            float physxJoint:armature = 0.01
+            float physxJoint:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:armature = 0.01
+            float physxJointAxis:angular:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.00017453292
+        }
+
+        def PhysicsRevoluteJoint "Left_roll" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI", "PhysxJointAxisAPI:angular", "NewtonJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0.034906585
+            float drive:angular:physics:maxForce = 20
+            float drive:angular:physics:stiffness = 1.7453293
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "force"
+            float newton:armature = 0.01
+            float newton:damping = 0.00017453292
+            float newton:friction = 0
+            float newton:velocityLimit = 171.88734
+            uniform token physics:axis = "X"
+            rel physics:body0 = </roboyi/Geometry/Left_hip_pitch_link>
+            rel physics:body1 = </roboyi/Geometry/Left_hip_roll_link>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.9995485, -0.010261761, 0.028238893, 0.0002898867)
+            quatf physics:localRot1 = (0.9995485, -0.01026177, 0.028238881, 0.00028992837)
+            float physics:lowerLimit = -15
+            float physics:upperLimit = 15
+            float physxJoint:armature = 0.01
+            float physxJoint:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:armature = 0.01
+            float physxJointAxis:angular:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.00017453292
+        }
+
+        def PhysicsRevoluteJoint "Left_yaw" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI", "PhysxJointAxisAPI:angular", "NewtonJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0.034906585
+            float drive:angular:physics:maxForce = 20
+            float drive:angular:physics:stiffness = 1.7453293
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "force"
+            float newton:armature = 0.01
+            float newton:damping = 0.00017453292
+            float newton:friction = 0
+            float newton:velocityLimit = 171.88734
+            uniform token physics:axis = "X"
+            rel physics:body0 = </roboyi/Geometry/Left_hip_roll_link>
+            rel physics:body1 = </roboyi/Geometry/Left_thigh_link>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.47176802, -0.4992052, -0.49920523, 0.5282265)
+            quatf physics:localRot1 = (-0.471768, -0.49920523, -0.49920526, 0.5282265)
+            float physics:lowerLimit = -45
+            float physics:upperLimit = 45
+            float physxJoint:armature = 0.01
+            float physxJoint:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:armature = 0.01
+            float physxJointAxis:angular:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.00017453292
+        }
+
+        def PhysicsRevoluteJoint "Left_knee" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI", "PhysxJointAxisAPI:angular", "NewtonJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0.034906585
+            float drive:angular:physics:maxForce = 20
+            float drive:angular:physics:stiffness = 1.7453293
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "force"
+            float newton:armature = 0.01
+            float newton:damping = 0.00017453292
+            float newton:friction = 0
+            float newton:velocityLimit = 171.88734
+            uniform token physics:axis = "X"
+            rel physics:body0 = </roboyi/Geometry/Left_thigh_link>
+            rel physics:body1 = </roboyi/Geometry/Left_shank_link>
+            point3f physics:localPos0 = (-0.0106862765, 0.0000021343615, -0.19075024)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.49484625, 0.50509906, -0.5050975, -0.4948521)
+            quatf physics:localRot1 = (0.49484628, 0.50509906, -0.5050975, -0.49485207)
+            float physics:lowerLimit = -45
+            float physics:upperLimit = 45
+            float physxJoint:armature = 0.01
+            float physxJoint:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:armature = 0.01
+            float physxJointAxis:angular:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.00017453292
+        }
+
+        def PhysicsRevoluteJoint "Left_ankle" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI", "PhysxJointAxisAPI:angular", "NewtonJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0.034906585
+            float drive:angular:physics:maxForce = 20
+            float drive:angular:physics:stiffness = 1.7453293
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "force"
+            float newton:armature = 0.01
+            float newton:damping = 0.00017453292
+            float newton:friction = 0
+            float newton:velocityLimit = 171.88734
+            uniform token physics:axis = "X"
+            rel physics:body0 = </roboyi/Geometry/Left_shank_link>
+            rel physics:body1 = </roboyi/Geometry/Left_foot_link>
+            point3f physics:localPos0 = (-0.011291366, 0.0000014514088, -0.19968215)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.49092707, -0.50890905, 0.50891125, 0.49092925)
+            quatf physics:localRot1 = (-0.4909271, -0.50890905, 0.50891125, 0.49092925)
+            float physics:lowerLimit = -45
+            float physics:upperLimit = 45
+            float physxJoint:armature = 0.01
+            float physxJoint:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:armature = 0.01
+            float physxJointAxis:angular:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.00017453292
+        }
+
+        def PhysicsRevoluteJoint "Right_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI", "PhysxJointAxisAPI:angular", "NewtonJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0.034906585
+            float drive:angular:physics:maxForce = 20
+            float drive:angular:physics:stiffness = 1.7453293
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "force"
+            float newton:armature = 0.01
+            float newton:damping = 0.00017453292
+            float newton:friction = 0
+            float newton:velocityLimit = 171.88734
+            uniform token physics:axis = "X"
+            rel physics:body0 = </roboyi/Geometry/base_link>
+            rel physics:body1 = </roboyi/Geometry/Right_hip_pitch_link>
+            point3f physics:localPos0 = (0, -0.09555, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (9.4734265e-9, 0.70710677, 0.70710677, -9.4734265e-9)
+            quatf physics:localRot1 = (-1.2101617e-8, 0.70710677, 0.70710677, 1.2101617e-8)
+            float physics:lowerLimit = -45
+            float physics:upperLimit = 45
+            float physxJoint:armature = 0.01
+            float physxJoint:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:armature = 0.01
+            float physxJointAxis:angular:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.00017453292
+        }
+
+        def PhysicsRevoluteJoint "Right_roll" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI", "PhysxJointAxisAPI:angular", "NewtonJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0.034906585
+            float drive:angular:physics:maxForce = 20
+            float drive:angular:physics:stiffness = 1.7453293
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "force"
+            float newton:armature = 0.01
+            float newton:damping = 0.00017453292
+            float newton:friction = 0
+            float newton:velocityLimit = 171.88734
+            uniform token physics:axis = "X"
+            rel physics:body0 = </roboyi/Geometry/Right_hip_pitch_link>
+            rel physics:body1 = </roboyi/Geometry/Right_hip_roll_link>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.010298299, 0.99954814, -0.00029095958, -0.028238833)
+            quatf physics:localRot1 = (-0.010298298, 0.99954814, -0.00029095696, -0.028238848)
+            float physics:lowerLimit = -15
+            float physics:upperLimit = 15
+            float physxJoint:armature = 0.01
+            float physxJoint:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:armature = 0.01
+            float physxJointAxis:angular:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.00017453292
+        }
+
+        def PhysicsRevoluteJoint "Right_yaw" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI", "PhysxJointAxisAPI:angular", "NewtonJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0.034906585
+            float drive:angular:physics:maxForce = 20
+            float drive:angular:physics:stiffness = 1.7453293
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "force"
+            float newton:armature = 0.01
+            float newton:damping = 0.00017453292
+            float newton:friction = 0
+            float newton:velocityLimit = 171.88734
+            uniform token physics:axis = "X"
+            rel physics:body0 = </roboyi/Geometry/Right_hip_roll_link>
+            rel physics:body1 = </roboyi/Geometry/Right_thigh_link>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.47175452, -0.49921796, -0.49921796, 0.52821445)
+            quatf physics:localRot1 = (-0.47175452, -0.499218, -0.49921796, 0.52821445)
+            float physics:lowerLimit = -45
+            float physics:upperLimit = 45
+            float physxJoint:armature = 0.01
+            float physxJoint:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:armature = 0.01
+            float physxJointAxis:angular:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.00017453292
+        }
+
+        def PhysicsRevoluteJoint "Right_knee" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI", "PhysxJointAxisAPI:angular", "NewtonJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0.034906585
+            float drive:angular:physics:maxForce = 20
+            float drive:angular:physics:stiffness = 1.7453293
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "force"
+            float newton:armature = 0.01
+            float newton:damping = 0.00017453292
+            float newton:friction = 0
+            float newton:velocityLimit = 171.88734
+            uniform token physics:axis = "X"
+            rel physics:body0 = </roboyi/Geometry/Right_thigh_link>
+            rel physics:body1 = </roboyi/Geometry/Right_shank_link>
+            point3f physics:localPos0 = (-0.010686267, 0.000011829046, -0.19075024)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.49483263, 0.50511456, -0.5050821, -0.49486572)
+            quatf physics:localRot1 = (0.4948326, 0.50511456, -0.5050821, -0.49486572)
+            float physics:lowerLimit = -45
+            float physics:upperLimit = 45
+            float physxJoint:armature = 0.01
+            float physxJoint:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:armature = 0.01
+            float physxJointAxis:angular:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.00017453292
+        }
+
+        def PhysicsRevoluteJoint "Right_ankle" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular", "PhysxJointAPI", "PhysxJointAxisAPI:angular", "NewtonJointAPI"]
+        )
+        {
+            float drive:angular:physics:damping = 0.034906585
+            float drive:angular:physics:maxForce = 20
+            float drive:angular:physics:stiffness = 1.7453293
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            uniform token drive:angular:physics:type = "force"
+            float newton:armature = 0.01
+            float newton:damping = 0.00017453292
+            float newton:friction = 0
+            float newton:velocityLimit = 171.88734
+            uniform token physics:axis = "X"
+            rel physics:body0 = </roboyi/Geometry/Right_shank_link>
+            rel physics:body1 = </roboyi/Geometry/Right_foot_link>
+            point3f physics:localPos0 = (-0.011291357, 0.000013166268, -0.19968215)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.4797887, 0.5183083, -0.49932, -0.5018355)
+            quatf physics:localRot1 = (0.47978833, 0.5183086, -0.49932033, -0.5018352)
+            float physics:lowerLimit = -45
+            float physics:upperLimit = 45
+            float physxJoint:armature = 0.01
+            float physxJoint:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:armature = 0.01
+            float physxJointAxis:angular:maxJointVelocity = 171.88734
+            float physxJointAxis:angular:viscousFrictionCoefficient = 0.00017453292
+        }
+    }
+
+    over "Geometry"
+    {
+        over "base_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsArticulationRootAPI", "PhysxArticulationAPI", "NewtonArticulationRootAPI", "PhysicsMassAPI", "NewtonMassAPI", "PhysicsFilteredPairsAPI"]
+        )
+        {
+            double[] newton:inertia = [0.0030312741545364301, 0.0044076350690907783, 0.0061890715600669633, 8.1119989212140805e-08, 2.584216309920754e-06, -9.9964812579543054e-08]
+            bool newton:selfCollisionEnabled = 1
+            point3f physics:centerOfMass = (0.00081978604, -4.7771067e-7, 0.059154)
+            float3 physics:diagonalInertia = (0.00303127216, 0.0044076351199999995, 0.0061890737999999992)
+            rel physics:filteredPairs = [
+                </roboyi/Geometry/Left_hip_pitch_link>,
+                </roboyi/Geometry/Left_hip_roll_link>,
+                </roboyi/Geometry/Left_thigh_link>,
+                </roboyi/Geometry/Right_hip_pitch_link>,
+                </roboyi/Geometry/Right_hip_roll_link>,
+                </roboyi/Geometry/Right_thigh_link>,
+            ]
+            float physics:mass = 3.7574285
+            quatf physics:principalAxes = (-0.000028006581, 0.99999994, -0.000029502795, -0.00040918268)
+            bool physxArticulation:enabledSelfCollisions = 1
+            int physxArticulation:solverPositionIterationCount = 8
+            int physxArticulation:solverVelocityIterationCount = 4
+
+            over "base_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+
+        over "Left_foot_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [3.3251685729975065e-05, 0.00020192605492475621, 0.00021653155654526913, -9.1206752303269021e-06, 1.15633430529301e-05, 2.7307984572263479e-06]
+            point3f physics:centerOfMass = (0.018601835, -0.0020871302, -0.014603368)
+            float3 physics:diagonalInertia = (3.2018747599999997e-05, 0.00020212672199999997, 0.00021756383600000001)
+            float physics:mass = 0.097160084
+            quatf physics:principalAxes = (0.06961226, 0.9966985, 0.029417895, -0.029678872)
+
+            over "Left_foot_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+
+        over "Right_foot_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [3.3294997253672887e-05, 0.00020188244528798554, 0.0002165313324583417, 9.5131672963014004e-06, 1.1556708905352576e-05, -2.7576702830783338e-06]
+            point3f physics:centerOfMass = (0.018606724, 0.0020439331, -0.014603341)
+            float3 physics:diagonalInertia = (3.2018719599999994e-05, 0.00020212648399999997, 0.00021756356999999999)
+            float physics:mass = 0.097160056
+            quatf physics:principalAxes = (-0.0696462, 0.99666363, -0.030577747, -0.029597221)
+
+            over "Right_foot_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+
+        over "Left_shank_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [0.00065491891829948332, 0.00072010419148116865, 0.00021523533621934884, -2.5700707720241878e-07, -2.4586972097192067e-05, -3.4515509509493175e-06]
+            point3f physics:centerOfMass = (-0.0044723162, 0.003838309, -0.0831759)
+            float3 physics:diagonalInertia = (0.00021384105399999999, 0.00065628947999999993, 0.00072012794000000002)
+            float physics:mass = 0.63862456
+            quatf physics:principalAxes = (0.5151256, 0.5123234, -0.4838807, 0.48788303)
+
+            over "Left_shank_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+
+        over "Right_shank_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [0.00065492882040646709, 0.00072011327149008137, 0.00021523718610345197, 2.5892340935027086e-07, -2.4587382791380069e-05, 3.4889622176620206e-06]
+            point3f physics:centerOfMass = (-0.0044723367, -0.0038322194, -0.083176374)
+            float3 physics:diagonalInertia = (0.00021384238399999999, 0.00065629941999999989, 0.00072013752999999998)
+            float physics:mass = 0.638626142
+            quatf physics:principalAxes = (0.5151441, -0.5123047, -0.4838623, -0.48790133)
+
+            over "Right_shank_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+
+        over "Left_thigh_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [0.00051073762456217654, 0.00042743732961743471, 0.00012159872162038958, 5.5519513970005382e-07, -2.3675358415543216e-05, 1.1651242210094284e-05]
+            point3f physics:centerOfMass = (-0.0077888323, 0.0014672675, -0.14282504)
+            float3 physics:diagonalInertia = (0.00011972150399999998, 0.00042787915800000001, 0.00051217303199999997)
+            float physics:mass = 0.190108492
+            quatf physics:principalAxes = (-0.012331328, 0.72806036, -0.0144054685, 0.68525076)
+
+            over "Left_thigh_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+
+        over "Right_thigh_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [0.00052028521119760628, 0.00043547180017829541, 0.00012383783222409865, -6.2415950550681078e-07, -2.4154687110695712e-05, -1.1847963959959525e-05]
+            point3f physics:centerOfMass = (-0.007414858, -0.0014571232, -0.14283203)
+            float3 physics:diagonalInertia = (0.00012192265399999999, 0.00043592061799999998, 0.00052175157999999994)
+            float physics:mass = 0.193653334
+            quatf physics:principalAxes = (0.01255692, 0.72808796, 0.014148141, 0.6852226)
+
+            over "Right_thigh_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+
+        over "Left_hip_roll_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [8.0693972113272985e-05, 0.00013355686010378578, 0.00011309235097272921, -9.6731518892804411e-09, 5.2439510120750351e-06, 1.0766774474960263e-09]
+            point3f physics:centerOfMass = (-0.002994308, 1.6659604e-7, -0.04075117)
+            float3 physics:diagonalInertia = (7.9866334800000004e-05, 0.000113919988, 0.00013355686399999997)
+            float physics:mass = 0.090123579
+            quatf physics:principalAxes = (-0.055351615, 0.055222686, 0.704945, 0.70493907)
+
+            over "Left_hip_roll_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+
+        over "Right_hip_roll_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [8.0693283442296131e-05, 0.0001335576007865895, 0.00011309203657111432, -9.3816447530027592e-09, 5.2439865427441538e-06, 2.2806431994311738e-09]
+            point3f physics:centerOfMass = (-0.0029930177, 0.000002730528, -0.040750902)
+            float3 physics:diagonalInertia = (7.9865641799999995e-05, 0.00011391967439999999, 0.00013355760599999999)
+            float physics:mass = 0.090120926
+            quatf physics:principalAxes = (0.704923, 0.70496124, 0.05534898, -0.05522488)
+
+            over "Right_hip_roll_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+
+        over "Left_hip_pitch_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [0.00028663518194895361, 0.00025101469103518928, 0.00029990106237619057, -9.0988363469114129e-07, 2.5477942027417289e-06, -4.6416871457443025e-06]
+            point3f physics:centerOfMass = (0.004896867, -0.00002903328, -0.0018220195)
+            float3 physics:diagonalInertia = (0.00025056547600000001, 0.00028616274399999997, 0.00030082269000000002)
+            float physics:mass = 0.64526819
+            quatf physics:principalAxes = (-0.098075844, 0.7068687, 0.6998029, -0.031521924)
+
+            over "Left_hip_pitch_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+
+        over "Right_hip_pitch_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "NewtonMassAPI"]
+        )
+        {
+            double[] newton:inertia = [0.00028449446199999999, 0.00024415372760448479, 0.00029040576639551512, 6.1471273695301207e-07, 5.5646507704072083e-07, 5.7775627968601701e-06]
+            point3f physics:centerOfMass = (0.005136866, 0.00031307008, 0.00047993852)
+            float3 physics:diagonalInertia = (0.00024343579399999999, 0.000284442662, 0.00029117549999999997)
+            float physics:mass = 0.633292072
+            quatf physics:principalAxes = (0.70761526, -0.0767053, -0.010014246, -0.7023508)
+
+            over "Right_hip_pitch_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+        }
+    }
+}
+
+def PhysicsScene "PhysicsScene" (
+    prepend apiSchemas = ["PhysxSceneAPI", "NewtonSceneAPI"]
+)
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+    token physxScene:broadphaseType = "MBP"
+    bool physxScene:enableGPUDynamics = 0
+    float physxScene:timeStepsPerSecond = 500
+}
+

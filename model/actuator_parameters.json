@@ -1,0 +1,28 @@
+{
+  "motor_family": "DM4340; RPO reference hardware is DM4340P 48V",
+  "joint_effort_limit_Nm": 20,
+  "joint_velocity_limit_rad_s": 3,
+  "kp_Nm_per_rad": 100,
+  "kv_Nm_s_per_rad": 2,
+  "passive_damping_Nm_s_per_rad": 0.01,
+  "joint_reflected_armature_kg_m2": 0.01,
+  "status": "simulation reference, not identified on user hardware",
+  "sources": {
+    "hardware_BOM": "https://github.com/Roboparty/roboto_origin/blob/main/assets/BOM.md",
+    "rpo_mjcf": "https://github.com/Roboparty/rpo_description/blob/8e0f8f78903dc147a5c094c0fdc14b4a78f1b667/mjcf/rpo.xml",
+    "rpo_isaac_asset": "https://github.com/Roboparty/robolab/blob/45cdc13a3465449315552af3dae09fa23f7083f5/robolab/assets/robots/roboparty.py",
+    "manufacturer_motor_manual": "https://github.com/dmBots/DM-J4340-2EC/tree/986209a45dca29375faf190106eb00a36baa44e9/manual"
+  },
+  "parameter_notes": {
+    "armature": "RPO feet/arms DelayedPDActuatorCfg and leg/arm_joint_param MJCF use 0.01. Do not infer it is manufacturer raw rotor inertia.",
+    "passive_damping": "RPO MJCF leg_joint_param/arm_joint_param damping=0.01; distinct from controller kv.",
+    "urdf": "Standard URDF stores passive dynamics damping; does not portably encode reflected rotor armature. Importer/training config must read this manifest for armature.",
+    "candidate_0_032": "Not enabled: requires interpreting older 2e-5 kg*m2 data as motor-side inertia and applying 40^2; no need to prefer it over the matched RoboParty simulation baseline."
+  },
+  "robot_name": "roboyi",
+  "velocity_limit_implementation": {
+    "urdf": "Declared joint velocity limit; importer must enforce it.",
+    "usd_physx": "Native PhysX joint/angular-axis velocity limit, 3 rad/s.",
+    "mujoco_xml": "Not a native hard constraint. Requires a matching control/actuator implementation; plain position actuators do not enforce 3 rad/s."
+  }
+}

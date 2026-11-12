@@ -1,0 +1,8 @@
+# Preserve the existing Isaac Sim 5.1 / Isaac Lab CUDA stack.
+numpy==1.26.0
+torch==2.7.0+cu128
+torchvision==0.22.0+cu128
+# OpenCV >=4.12 requires NumPy 2, incompatible with this Isaac Lab installation.
+opencv-python==4.11.0.86
+# Required by the preinstalled nvidia-srl-base package.
+docstring-parser==0.16

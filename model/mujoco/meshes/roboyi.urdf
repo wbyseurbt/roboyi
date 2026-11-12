@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="roboyi">
+  <!-- Canonical zero: upright torso and both actual sole planes horizontal. -->
+  <!-- Frames: +X forward, +Y left, +Z up at standard zero. Mesh coordinates remain unchanged. -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.00081978607000000002 -4.7771069000000002e-07 0.059153999999999998" rpy="-1.5707963000000003 -0 -1.5707963267948966" />
+      <mass value="3.7574283266061497" />
+      <inertia ixx="0.0044076350690907783" ixy="-9.9964814753144741e-08" ixz="-8.111998653359398e-08" iyy="0.0061890715599284734" iyz="-2.5843009227751238e-06" izz="0.00303127415467492" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.5707963000000003 -0 -1.5707963267948966" />
+      <geometry>
+        <mesh filename="./base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.5707963000000003 -0 -1.5707963267948966" />
+      <geometry>
+        <mesh filename="./base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="Left_hip_pitch_link">
+    <inertial>
+      <origin xyz="0.0048968672000000001 -2.9033168179176126e-05 -0.0018220195007779413" rpy="0 -1.5707963000000003 -1.5707963267948966" />
+      <mass value="0.64526818076760761" />
+      <inertia ixx="0.00029990106205843417" ixy="2.5477941715977377e-06" ixz="-4.6416888190534962e-06" iyy="0.00028663518194895361" iyz="-9.0988372189842116e-07" izz="0.00025101469135294579" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -1.5707963000000003 -1.5707963267948966" />
+      <geometry>
+        <mesh filename="./Left_hip_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -1.5707963000000003 -1.5707963267948966" />
+      <geometry>
+        <mesh filename="./Left_hip_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Left_pitch" type="revolute">
+    <origin xyz="0 0.095549999999999996 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Left_hip_pitch_link" />
+    <axis xyz="0 0.99999999999999967 2.6794896468285145e-08" />
+    <!-- Joint velocity cap: 3 rad/s, selected by user for simulation. -->
+    <limit lower="-0.7853981633974483" upper="0.7853981633974483" effort="20" velocity="3" />
+    <!-- Passive damping from RoboParty RPO MJCF; not controller kv. Armature: ../../actuator_parameters.json -->
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <link name="Left_hip_roll_link">
+    <inertial>
+      <origin xyz="-0.0029943079714811333 1.6930942114411756e-07 -0.040751167979705752" rpy="-1.5702167059881034 -1.5502970496450643 1.5713759223219319" />
+      <mass value="0.090123583695523271" />
+      <inertia ixx="0.00011310086897263923" ixy="4.1439069206605694e-07" ixz="-5.2435198412024393e-06" iyy="0.00013354841811369182" iyz="5.5889616950520636e-08" izz="8.0693896103456854e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.5702167059881034 -1.5502970496450643 1.5713759223219319" />
+      <geometry>
+        <mesh filename="./Left_hip_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.5702167059881034 -1.5502970496450643 1.5713759223219319" />
+      <geometry>
+        <mesh filename="./Left_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Left_roll" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="Left_hip_pitch_link" />
+    <child link="Left_hip_roll_link" />
+    <axis xyz="0.99840495999999979 -2.5239366007769048e-08 -0.056458185000000723" />
+    <!-- Joint velocity cap: 3 rad/s, selected by user for simulation. -->
+    <limit lower="-0.2617993877991494" upper="0.2617993877991494" effort="20" velocity="3" />
+    <!-- Passive damping from RoboParty RPO MJCF; not controller kv. Armature: ../../actuator_parameters.json -->
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <link name="Left_thigh_link">
+    <inertial>
+      <origin xyz="-0.007788828415371157 0.0014672725768788918 -0.14282504672276111" rpy="-1.1856676610061091e-05 -0.02049930050077494 -1.5696369886552166" />
+      <mass value="0.19010848634308719" />
+      <inertia ixx="0.00042682897599999998" ixy="-9.4332368199999997e-07" ixz="-1.7936588600000001e-05" iyy="0.00051073936200000003" iyz="-2.36428444e-05" izz="0.00012220533780000001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.1856676610061091e-05 -0.02049930050077494 -1.5696369886552166" />
+      <geometry>
+        <mesh filename="./Left_thigh_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.1856676610061091e-05 -0.02049930050077494 -1.5696369886552166" />
+      <geometry>
+        <mesh filename="./Left_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Left_yaw" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="Left_hip_roll_link" />
+    <child link="Left_thigh_link" />
+    <axis xyz="-0.056458158014214548 1.1048946930609926e-05 -0.99840496699438386" />
+    <!-- Joint velocity cap: 3 rad/s, selected by user for simulation. -->
+    <limit lower="-0.7853981633974483" upper="0.7853981633974483" effort="20" velocity="3" />
+    <!-- Passive damping from RoboParty RPO MJCF; not controller kv. Armature: ../../actuator_parameters.json -->
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <link name="Left_shank_link">
+    <inertial>
+      <origin xyz="-0.0044723140792279816 0.0038383136840725576 -0.083175899403099662" rpy="1.5912993005456109 -1.1778892621493076e-05 -3.1404372309200186" />
+      <mass value="0.6386245501942025" />
+      <inertia ixx="0.00065491899199999993" ixy="2.4584309399999999e-05" ixz="-3.2243838199999997e-07" iyy="0.00021530662999999996" iyz="6.9281991799999991e-06" izz="0.00072003282399999997" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5912993005456109 -1.1778892621493076e-05 -3.1404372309200186" />
+      <geometry>
+        <mesh filename="./Left_shank_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5912993005456109 -1.1778892621493076e-05 -3.1404372309200186" />
+      <geometry>
+        <mesh filename="./Left_shank_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Left_knee" type="revolute">
+    <origin xyz="-0.010686270849996182 2.1412487745849085e-06 -0.19075024840609145" rpy="0 0 0" />
+    <parent link="Left_thigh_link" />
+    <child link="Left_shank_link" />
+    <axis xyz="-4.2765178719626502e-06 -1.0000010040051914 -7.4438080841197907e-06" />
+    <!-- Joint velocity cap: 3 rad/s, selected by user for simulation. -->
+    <limit lower="-0.7853981633974483" upper="0.7853981633974483" effort="20" velocity="3" />
+    <!-- Passive damping from RoboParty RPO MJCF; not controller kv. Armature: ../../actuator_parameters.json -->
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <link name="Left_foot_link">
+    <inertial>
+      <origin xyz="0.01860183646064301 -0.0020871300726757421 -0.014603367749412352" rpy="1.550220419333983 -0.056476295804712605 0.0011571189642978483" />
+      <mass value="0.097160084273782463" />
+      <inertia ixx="3.5118521199999993e-05" ixy="2.1638125599999997e-05" ixz="9.2049914599999999e-06" iyy="0.000214770808" iyz="-2.9529918599999996e-06" izz="0.00020181996799999998" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.550220419333983 -0.056476295804712605 0.0011571189642978483" />
+      <geometry>
+        <mesh filename="./Left_foot_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.550220419333983 -0.056476295804712605 0.0011571189642978483" />
+      <geometry>
+        <mesh filename="./Left_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Left_ankle" type="revolute">
+    <origin xyz="-0.011291361262941788 1.4633254180936722e-06 -0.19968213342354499" rpy="0 0 0" />
+    <parent link="Left_shank_link" />
+    <child link="Left_foot_link" />
+    <axis xyz="-4.4270448456318714e-06 -1.0000010040322378 -8.8875273297067681e-08" />
+    <!-- Joint velocity cap: 3 rad/s, selected by user for simulation. -->
+    <limit lower="-0.7853981633974483" upper="0.7853981633974483" effort="20" velocity="3" />
+    <!-- Passive damping from RoboParty RPO MJCF; not controller kv. Armature: ../../actuator_parameters.json -->
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <link name="Right_hip_pitch_link">
+    <inertial>
+      <origin xyz="0.0051368658999999999 0.00031307013285990286 0.00047993851161131837" rpy="0 1.5707963000000003 -1.5707963267948966" />
+      <mass value="0.63329209000319076" />
+      <inertia ixx="0.00029040576599999996" ixy="-5.5646505599999997e-07" ixz="5.7775643800000003e-06" iyy="0.00028449446199999999" iyz="-6.1471275599999992e-07" izz="0.00024415372799999996" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963000000003 -1.5707963267948966" />
+      <geometry>
+        <mesh filename="./Right_hip_pitch_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 1.5707963000000003 -1.5707963267948966" />
+      <geometry>
+        <mesh filename="./Right_hip_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Right_pitch" type="revolute">
+    <origin xyz="0 -0.095549999999999996 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Right_hip_pitch_link" />
+    <axis xyz="0 0.99999999999999967 -2.6794896468285145e-08" />
+    <!-- Joint velocity cap: 3 rad/s, selected by user for simulation. -->
+    <limit lower="-0.7853981633974483" upper="0.7853981633974483" effort="20" velocity="3" />
+    <!-- Passive damping from RoboParty RPO MJCF; not controller kv. Armature: ../../actuator_parameters.json -->
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <link name="Right_hip_roll_link">
+    <inertial>
+      <origin xyz="-0.0029930176740478771 2.7279892269671368e-06 -0.0407509017790939" rpy="-1.5713757549177609 -1.5502240778120953 -1.5713802949915798" />
+      <mass value="0.090120926584103936" />
+      <inertia ixx="0.000113100477" ixy="4.1252768199999996e-07" ixz="5.2439426199999999e-06" iyy="0.000133549192" iyz="-3.7002743399999998e-08" izz="8.0693251799999994e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.5713757549177609 -1.5502240778120953 -1.5713802949915798" />
+      <geometry>
+        <mesh filename="./Right_hip_roll_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.5713757549177609 -1.5502240778120953 -1.5713802949915798" />
+      <geometry>
+        <mesh filename="./Right_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Right_roll" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="Right_hip_pitch_link" />
+    <child link="Right_hip_roll_link" />
+    <axis xyz="0.99840496262023481 -2.8264947267691437e-08 -0.056458138663818151" />
+    <!-- Joint velocity cap: 3 rad/s, selected by user for simulation. -->
+    <limit lower="-0.2617993877991494" upper="0.2617993877991494" effort="20" velocity="3" />
+    <!-- Passive damping from RoboParty RPO MJCF; not controller kv. Armature: ../../actuator_parameters.json -->
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <link name="Right_thigh_link">
+    <inertial>
+      <origin xyz="-0.0074148617478717255 -0.0014571358806038043 -0.14283201663192369" rpy="-1.1948615721715763e-05 0.020572218733985702 -1.5719598457477628" />
+      <mass value="0.19365333724834438" />
+      <inertia ixx="0.00043485009399999998" ixy="1.02174527e-06" ixz="1.8275214999999998e-05" iyy="0.00052028712399999997" iyz="-2.4120248600000001e-05" izz="0.00012445762559999999" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.1948615721715763e-05 0.020572218733985702 -1.5719598457477628" />
+      <geometry>
+        <mesh filename="./Right_thigh_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.1948615721715763e-05 0.020572218733985702 -1.5719598457477628" />
+      <geometry>
+        <mesh filename="./Right_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Right_yaw" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="Right_hip_roll_link" />
+    <child link="Right_thigh_link" />
+    <axis xyz="-0.056458165126610234 6.1988971165927859e-05 -0.99840496472894069" />
+    <!-- Joint velocity cap: 3 rad/s, selected by user for simulation. -->
+    <limit lower="-0.7853981633974483" upper="0.7853981633974483" effort="20" velocity="3" />
+    <!-- Passive damping from RoboParty RPO MJCF; not controller kv. Armature: ../../actuator_parameters.json -->
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <link name="Right_shank_link">
+    <inertial>
+      <origin xyz="-0.004472339108350821 -0.0038322282765394511 -0.083176376039807182" rpy="1.5913722187791861 1.1870526738311158e-05 -0.0011596007328169356" />
+      <mass value="0.63862612503648275" />
+      <inertia ixx="0.00065492888999999996" ixy="-2.4584771399999996e-05" ixz="3.2259379599999998e-07" iyy="0.00021530795999999996" iyz="6.927900839999999e-06" izz="0.00072004242799999997" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5913722187791861 1.1870526738311158e-05 -0.0011596007328169356" />
+      <geometry>
+        <mesh filename="./Right_shank_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5913722187791861 1.1870526738311158e-05 -0.0011596007328169356" />
+      <geometry>
+        <mesh filename="./Right_shank_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Right_knee" type="revolute">
+    <origin xyz="-0.010686272208982316 1.1812590427450788e-05 -0.19075024797621687" rpy="0 0 0" />
+    <parent link="Right_thigh_link" />
+    <child link="Right_shank_link" />
+    <axis xyz="9.7588191576509012e-08 -1.0000010018985794 -6.5474555886346764e-05" />
+    <!-- Joint velocity cap: 3 rad/s, selected by user for simulation. -->
+    <limit lower="-0.7853981633974483" upper="0.7853981633974483" effort="20" velocity="3" />
+    <!-- Passive damping from RoboParty RPO MJCF; not controller kv. Armature: ../../actuator_parameters.json -->
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+  <link name="Right_foot_link">
+    <inertial>
+      <origin xyz="0.018606706645436805 0.0020439321992812677 -0.014603366651250874" rpy="1.5913722323677646 -0.056476297151601774 -0.003482414936810862" />
+      <mass value="0.097160058354864395" />
+      <inertia ixx="3.5118530999999997e-05" ixy="2.1638094799999998e-05" ixz="-9.2053632999999986e-06" iyy="0.00021477055599999998" iyz="2.9530155199999999e-06" izz="0.00020181968799999999" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5913722323677646 -0.056476297151601774 -0.003482414936810862" />
+      <geometry>
+        <mesh filename="./Right_foot_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5913722323677646 -0.056476297151601774 -0.003482414936810862" />
+      <geometry>
+        <mesh filename="./Right_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Right_ankle" type="revolute">
+    <origin xyz="-0.011291362682309578 1.3144340198143617e-05 -0.19968213291602444" rpy="0 0 0" />
+    <parent link="Right_shank_link" />
+    <child link="Right_foot_link" />
+    <axis xyz="-0.0023188090413008705 -0.9991543899378712 -0.04107476448623848" />
+    <!-- Joint velocity cap: 3 rad/s, selected by user for simulation. -->
+    <limit lower="-0.7853981633974483" upper="0.7853981633974483" effort="20" velocity="3" />
+    <!-- Passive damping from RoboParty RPO MJCF; not controller kv. Armature: ../../actuator_parameters.json -->
+    <dynamics damping="0.01" friction="0" />
+  </joint>
+</robot>

@@ -1,0 +1,10 @@
+<mujoco model="roboyi_standing_scene">
+  <include file="roboyi.xml" />
+  <worldbody>
+    <geom name="ground" type="plane" size="2 2 0.1" pos="0 0 0" rgba="0.78 0.80 0.82 1" friction="0.8 0.005 0.0001" />
+    <light name="key" pos="0 -1 2" dir="0 0 -1" diffuse="0.8 0.8 0.8" />
+  </worldbody>
+  <visual>
+    <global offwidth="1600" offheight="1000" />
+  </visual>
+</mujoco>

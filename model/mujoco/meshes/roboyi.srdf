@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="roboyi">
+  <disable_collisions link1="base_link" link2="Left_hip_pitch_link" reason="HipAssembly" />
+  <disable_collisions link1="base_link" link2="Left_hip_roll_link" reason="HipAssembly" />
+  <disable_collisions link1="base_link" link2="Left_thigh_link" reason="HipAssembly" />
+  <disable_collisions link1="base_link" link2="Right_hip_pitch_link" reason="HipAssembly" />
+  <disable_collisions link1="base_link" link2="Right_hip_roll_link" reason="HipAssembly" />
+  <disable_collisions link1="base_link" link2="Right_thigh_link" reason="HipAssembly" />
+</robot>

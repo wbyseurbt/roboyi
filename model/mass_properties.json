@@ -1,0 +1,63 @@
+{
+  "robot_name": "roboyi",
+  "mass_scale_from_original": 1.4,
+  "scaling_assumption": "Uniform density scaling of every link at fixed geometry and center of mass; link inertia tensors scale with mass. Motor rotor armature and actuator capabilities are independent.",
+  "original_total_mass_kg": 5.051118392219529,
+  "total_mass_kg": 7.071565749107339,
+  "links": {
+    "base_link": {
+      "original_mass_kg": 2.68387737614725,
+      "mass_kg": 3.7574283266061497
+    },
+    "Left_hip_pitch_link": {
+      "original_mass_kg": 0.460905843405434,
+      "mass_kg": 0.6452681807676076
+    },
+    "Left_hip_roll_link": {
+      "original_mass_kg": 0.0643739883539452,
+      "mass_kg": 0.09012358369552327
+    },
+    "Left_thigh_link": {
+      "original_mass_kg": 0.135791775959348,
+      "mass_kg": 0.1901084863430872
+    },
+    "Left_shank_link": {
+      "original_mass_kg": 0.456160392995859,
+      "mass_kg": 0.6386245501942025
+    },
+    "Left_foot_link": {
+      "original_mass_kg": 0.0694000601955589,
+      "mass_kg": 0.09716008427378246
+    },
+    "Right_hip_pitch_link": {
+      "original_mass_kg": 0.452351492859422,
+      "mass_kg": 0.6332920900031908
+    },
+    "Right_hip_roll_link": {
+      "original_mass_kg": 0.0643720904172171,
+      "mass_kg": 0.09012092658410394
+    },
+    "Right_thigh_link": {
+      "original_mass_kg": 0.138323812320246,
+      "mass_kg": 0.19365333724834438
+    },
+    "Right_shank_link": {
+      "original_mass_kg": 0.456161517883202,
+      "mass_kg": 0.6386261250364828
+    },
+    "Right_foot_link": {
+      "original_mass_kg": 0.069400041682046,
+      "mass_kg": 0.0971600583548644
+    }
+  },
+  "mass_dependent_training_parameters": {
+    "base_mass_randomization_add_kg": [
+      -0.28,
+      0.28
+    ],
+    "feet_force_threshold_N": 140.0,
+    "feet_force_excess_cap_N": 140.0,
+    "feet_force_weight": -0.002142857142857143
+  },
+  "pre_change_backup": "outputs/roboyi_mass_scale_1p4/20261111_195550/before"
+}

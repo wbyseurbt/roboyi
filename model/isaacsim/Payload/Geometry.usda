@@ -1,0 +1,315 @@
+#usda 1.0
+(
+    "Converted from meshes/roboyi.urdf"
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "roboyi"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "roboyi"
+{
+    def Scope "Geometry"
+    {
+        def Xform "base_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "base_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/base_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (0, -1, 0, 0), (-3.42285420007471e-8, 0, -0.9999999999999993, 0), (0.9999999999999993, 0, -3.42285420007471e-8, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "base_link_1" (
+                displayName = "base_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/base_link>
+                uiHints = {
+                    string displayName = "base_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (0, -1, 0, 0), (-3.42285420007471e-8, 0, -0.9999999999999993, 0), (0.9999999999999993, 0, -3.42285420007471e-8, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "Left_foot_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.021977642887285175, 0.09555358558715726, -0.3904323812233347, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Left_foot_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Left_foot_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (0.9984049709285099, 0.0011553165944866968, 0.056446251149293185, 0), (-0.05645807298835101, 0.020509194969869225, 0.9981942991803402, 0), (-0.000004436731773823201, -0.999788996821457, 0.020541709156275362, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Left_foot_link_1" (
+                displayName = "Left_foot_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Left_foot_link>
+                uiHints = {
+                    string displayName = "Left_foot_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (0.9984049709285099, 0.0011553165944866968, 0.056446251149293185, 0), (-0.05645807298835101, 0.020509194969869225, 0.9981942991803402, 0), (-0.000004436731773823201, -0.999788996821457, 0.020541709156275362, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "Right_foot_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.021977624340256127, -0.09552500450220189, -0.3904323814837142, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Right_foot_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Right_foot_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (0.9983995097580947, -0.003476895264794058, 0.05644758731880811, 0), (-0.05650694620228543, -0.020377906686711734, 0.9981942225588967, 0), (-0.002320333098687474, -0.9997863032260372, -0.020541760779588157, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Right_foot_link_1" (
+                displayName = "Right_foot_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Right_foot_link>
+                uiHints = {
+                    string displayName = "Right_foot_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (0.9983995097580947, -0.003476895264794058, 0.05644758731880811, 0), (-0.05650694620228543, -0.020377906686711734, 0.9981942225588967, 0), (-0.002320333098687474, -0.9997863032260372, -0.020541760779588157, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "Left_shank_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.01068627616147772, 0.09555213402632387, -0.1907502481086108, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Left_shank_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Left_shank_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (-0.999999332383796, -0.0011554620607882964, 0.00001180631560656212, 0), (-0.000011884987698165531, 0.020501593885901132, 0.9997898201656611, 0), (-0.0011554612542517993, 0.9997891525494584, -0.020501593931356983, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Left_shank_link_1" (
+                displayName = "Left_shank_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Left_shank_link>
+                uiHints = {
+                    string displayName = "Left_shank_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (-0.999999332383796, -0.0011554620607882964, 0.00001180631560656212, 0), (-0.000011884987698165531, 0.020501593885901132, 0.9997898201656611, 0), (-0.0011554612542517993, 0.9997891525494584, -0.020501593931356983, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "Right_shank_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.01068626710168785, -0.09553817061801395, -0.19075024826129877, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Right_shank_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Right_shank_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (0.9999993276151737, -0.0011595813619630399, -0.000011843391170686376, 0), (-0.000012016988835910877, -0.02057455019303436, 0.9997883214660724, 0), (-0.0011595795759268108, -0.9997876490812535, -0.02057455029369555, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Right_shank_link_1" (
+                displayName = "Right_shank_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Right_shank_link>
+                uiHints = {
+                    string displayName = "Right_shank_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (0.9999993276151737, -0.0011595813619630399, -0.000011843391170686376, 0), (-0.000012016988835910877, -0.02057455019303436, 0.9997883214660724, 0), (-0.0011595795759268108, -0.9997876490812535, -0.02057455029369555, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "Left_thigh_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0.09555, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Left_thigh_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Left_thigh_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (0.001159156781389781, -0.9997892240291583, 0.020497899178463397, 0), (0.999999328106977, 0.001159156767483425, -0.000011882069851508225, 0), (-0.000011880713154981566, 0.020497899179250014, 0.9997898959221814, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Left_thigh_link_1" (
+                displayName = "Left_thigh_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Left_thigh_link>
+                uiHints = {
+                    string displayName = "Left_thigh_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (0.001159156781389781, -0.9997892240291583, 0.020497899178463397, 0), (0.999999328106977, 0.001159156767483425, -0.000011882069851508225, 0), (-0.000011880713154981566, 0.020497899179250014, 0.9997898959221814, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "Right_thigh_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, -0.09555, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Right_thigh_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Right_thigh_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (-0.0011632751035348667, -0.9997877208153395, -0.020570855546202374, 0), (0.9999993233231356, -0.001163276063102764, -0.000011919415024617631, 0), (-0.000012012699073749283, -0.020570855491938864, 0.9997883974922019, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Right_thigh_link_1" (
+                displayName = "Right_thigh_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Right_thigh_link>
+                uiHints = {
+                    string displayName = "Right_thigh_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (-0.0011632751035348667, -0.9997877208153395, -0.020570855546202374, 0), (0.9999993233231356, -0.001163276063102764, -0.000011919415024617631, 0), (-0.000012012699073749283, -0.020570855491938864, 0.9997883974922019, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "Left_hip_roll_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0.09555, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Left_hip_roll_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Left_hip_roll_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (-0.00001188071315542591, 0.020497899179250233, 0.9997898959221811, 0), (-0.0011591567813900028, 0.999789224029158, -0.020497899178463837, 0), (-0.9999993281069768, -0.0011591567674838735, 0.000011882069851295327, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Left_hip_roll_link_1" (
+                displayName = "Left_hip_roll_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Left_hip_roll_link>
+                uiHints = {
+                    string displayName = "Left_hip_roll_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (-0.00001188071315542591, 0.020497899179250233, 0.9997898959221811, 0), (-0.0011591567813900028, 0.999789224029158, -0.020497899178463837, 0), (-0.9999993281069768, -0.0011591567674838735, 0.000011882069851295327, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "Right_hip_roll_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, -0.09555, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Right_hip_roll_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Right_hip_roll_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (-0.000012012699073304933, -0.020570855491938638, 0.9997883974922017, 0), (-0.0011632751035350886, -0.9997877208153393, -0.020570855546201926, 0), (0.9999993233231353, -0.0011632760631032034, -0.000011919415024848761, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Right_hip_roll_link_1" (
+                displayName = "Right_hip_roll_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Right_hip_roll_link>
+                uiHints = {
+                    string displayName = "Right_hip_roll_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (-0.000012012699073304933, -0.020570855491938638, 0.9997883974922017, 0), (-0.0011632751035350886, -0.9997877208153393, -0.020570855546201926, 0), (0.9999993233231353, -0.0011632760631032034, -0.000011919415024848761, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "Left_hip_pitch_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0.09555, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Left_hip_pitch_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Left_hip_pitch_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (0, 3.422854177870249e-8, 0.9999999999999993, 0), (1, 0, 0, 0), (0, 0.9999999999999993, -3.422854177870249e-8, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Left_hip_pitch_link_1" (
+                displayName = "Left_hip_pitch_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Left_hip_pitch_link>
+                uiHints = {
+                    string displayName = "Left_hip_pitch_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (0, 3.422854177870249e-8, 0.9999999999999993, 0), (1, 0, 0, 0), (0, 0.9999999999999993, -3.422854177870249e-8, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        def Xform "Right_hip_pitch_link"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, -0.09555, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Mesh "Right_hip_pitch_link" (
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Right_hip_pitch_link>
+            )
+            {
+                matrix4d xformOp:transform = ( (0, 3.422854177870249e-8, -0.9999999999999993, 0), (1, 0, 0, 0), (0, -0.9999999999999993, -3.422854177870249e-8, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Right_hip_pitch_link_1" (
+                displayName = "Right_hip_pitch_link"
+                prepend references = @./GeometryLibrary.usdc@</Geometry/Right_hip_pitch_link>
+                uiHints = {
+                    string displayName = "Right_hip_pitch_link"
+                }
+            )
+            {
+                uniform token purpose = "guide"
+                matrix4d xformOp:transform = ( (0, 3.422854177870249e-8, -0.9999999999999993, 0), (1, 0, 0, 0), (0, -0.9999999999999993, -3.422854177870249e-8, 0), (0, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+    }
+}
+

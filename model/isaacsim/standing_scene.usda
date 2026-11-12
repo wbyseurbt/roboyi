@@ -1,0 +1,49 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def Xform "roboyi" (
+        prepend references = @./roboyi.usda@</roboyi>
+    )
+    {
+    }
+
+    def PhysicsScene "PhysicsScene" (
+        prepend apiSchemas = ["PhysxSceneAPI"]
+    )
+    {
+        vector3f physics:gravityDirection = (0, 0, -1)
+        float physics:gravityMagnitude = 9.81
+        token physxScene:broadphaseType = "MBP"
+        bool physxScene:enableGPUDynamics = 0
+        float physxScene:timeStepsPerSecond = 500
+    }
+
+    def Mesh "Ground" (
+        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+    )
+    {
+        int[] faceVertexCounts = [4]
+        int[] faceVertexIndices = [0, 1, 2, 3]
+        rel material:binding:physics = </World/PhysicsMaterial>
+        uniform token physics:approximation = "none"
+        point3f[] points = [(-2, -2, 0), (2, -2, 0), (2, 2, 0), (-2, 2, 0)]
+        uniform token subdivisionScheme = "none"
+    }
+
+    def Material "PhysicsMaterial" (
+        prepend apiSchemas = ["PhysicsMaterialAPI"]
+    )
+    {
+        float physics:dynamicFriction = 0.8
+        float physics:restitution = 0
+        float physics:staticFriction = 0.8
+    }
+}
+

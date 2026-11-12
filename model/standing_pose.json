@@ -1,0 +1,38 @@
+{
+  "zero_definition": "upright torso, straight knees, both measured STL sole planes horizontal",
+  "source": "URDF prior to this change",
+  "old_urdf_q_equals_new_q_plus_rad": {
+    "Left_pitch": 0.0,
+    "Left_roll": -0.02053205444641037,
+    "Left_yaw": 0.0,
+    "Left_knee": 0.0,
+    "Left_ankle": 0.05649545759416952,
+    "Right_pitch": 0.0,
+    "Right_roll": 0.02060514284321218,
+    "Right_yaw": 0.0,
+    "Right_knee": 0.0,
+    "Right_ankle": 0.056535892289048144
+  },
+  "new_zero_joint_positions_rad": {
+    "Left_pitch": 0.0,
+    "Left_roll": 0.0,
+    "Left_yaw": 0.0,
+    "Left_knee": 0.0,
+    "Left_ankle": 0.0,
+    "Right_pitch": 0.0,
+    "Right_roll": 0.0,
+    "Right_yaw": 0.0,
+    "Right_knee": 0.0,
+    "Right_ankle": 0.0
+  },
+  "base_height_sole_at_ground_m": 0.4154323825438452,
+  "default_spawn_height_m": 0.4159323825438452,
+  "root_axes": "+X forward, +Y left, +Z up (right-handed, same convention as RPO)",
+  "usd_fixed_root_preserved": false,
+  "physical_hardware_zero_not_changed": true,
+  "robot_name": "roboyi",
+  "usd_floating_base": true,
+  "usd_rigid_body_layout": "siblings under /roboyi/Geometry",
+  "zero_pose_link_axes": "All link frames align with base axes at standard zero; foot local +Z points up.",
+  "coordinate_convention_file": "coordinate_convention.json"
+}
